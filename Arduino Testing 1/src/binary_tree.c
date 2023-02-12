@@ -5,15 +5,15 @@ struct node {
     int value;
     struct node* left;
     struct node* right;
-}
+};
 
 // Inorder traversal
-void inorderTraversal(struct node* root) {
-    if (root == NULL) return;
-    inorderTraversal(root->left);
-    printf("%d ->", root->value);
-    inorderTraversal(root->right);
-}
+// void inorderTraversal(struct node* root) {
+//     if (root == NULL) return;
+//     inorderTraversal(root->left);
+//     printf("%d ->", root->value);
+//     inorderTraversal(root->right);
+// }
 
 // Preorder traversal
 void preorderTraversal(struct node* root) {
@@ -24,12 +24,12 @@ void preorderTraversal(struct node* root) {
 }
 
 // Postorder traversal
-void postorderTraversal(struct node* root) {
-    if (root == NULL) return;
-    postorderTraversal(root->left);
-    postorderTraversal(root->right);
-    printf("%d ->", root->value);
-}
+// void postorderTraversal(struct node* root) {
+//     if (root == NULL) return;
+//     postorderTraversal(root->left);
+//     postorderTraversal(root->right);
+//     printf("%d ->", root->value);
+// }
 
 // Create a new Node
 struct node* createNode(int value) {
@@ -54,14 +54,42 @@ struct node* insertRight(struct node* root, int value) {
 }
 
 int main() {
-    struct node* root;
+    int left_bit = 0, right_bit = 0, middle_bit = 1;
 
-    printf("Inorder traversal \n");
-    inorderTraversal(root);
+    // Creates root node
+    struct node* root = createNode(middle_bit);
+
+    // Creates first layer
+    struct node* l_child = insertLeft(root, left_bit);
+    struct node* r_child = insertRight(root, right_bit);
+
+    // Creates second left layer subtree
+    struct node* thumb  = insertLeft(l_child, 1);
+    struct node* lr_child = insertRight(l_child, right_bit);
+
+    // Creates second right layer subtree
+    struct node* rl_child = insertLeft(r_child, right_bit);
+    struct node* rr_child = insertRight(r_child, right_bit);
+
+    // Creates third right layer subtree in left subtree
+    struct node* ring_fin = insertLeft(lr_child, 4);
+    struct node* pinky = insertRight(lr_child, 5);
+
+    // Creates third left layer subtree in right subtree
+    struct node* index_fin = insertLeft(rl_child, 2);
+    struct node* middle_fin = insertRight(rl_child, 3);
+
+    // Creates third right layer subtree in right subtree
+    struct node* wrist_up = insertLeft(rr_child, 6);
+    struct node* wrist_down = insertRight(rr_child, 7);
+
+
+    // printf("Inorder traversal \n");
+    // inorderTraversal(root);
 
     printf("\nPreorder traversal \n");
     preorderTraversal(root);
 
-    printf("\nPostorder traversal \n");
-    postorderTraversal(root);
+    // printf("\nPostorder traversal \n");
+    // postorderTraversal(root);
 }
