@@ -1,35 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 struct node {
     int value;
     struct node* left;
     struct node* right;
 };
-
-// Inorder traversal
-// void inorderTraversal(struct node* root) {
-//     if (root == NULL) return;
-//     inorderTraversal(root->left);
-//     printf("%d ->", root->value);
-//     inorderTraversal(root->right);
-// }
-
-// Preorder traversal
-void preorderTraversal(struct node* root) {
-    if (root == NULL) return;
-    printf("%d ->", root->value);
-    preorderTraversal(root->left);
-    preorderTraversal(root->right);
-}
-
-// Postorder traversal
-// void postorderTraversal(struct node* root) {
-//     if (root == NULL) return;
-//     postorderTraversal(root->left);
-//     postorderTraversal(root->right);
-//     printf("%d ->", root->value);
-// }
 
 // Create a new Node
 struct node* createNode(int value) {
@@ -53,8 +30,17 @@ struct node* insertRight(struct node* root, int value) {
     return root->right;
 }
 
-int main() {
-    int left_bit = 0, right_bit = 0, middle_bit = 1;
+
+
+int main() { 
+ 
+
+}
+
+
+
+void loop() {
+    int left_bit = 1, right_bit = 1, middle_bit = 1;
 
     // Creates root node
     struct node* root = createNode(middle_bit);
@@ -83,13 +69,54 @@ int main() {
     struct node* wrist_up = insertLeft(rr_child, 6);
     struct node* wrist_down = insertRight(rr_child, 7);
 
+    //creating empty nodes 
+    struct node* empty1  = insertRight(wrist_down, -1);
 
-    // printf("Inorder traversal \n");
-    // inorderTraversal(root);
-
-    printf("\nPreorder traversal \n");
-    preorderTraversal(root);
-
-    // printf("\nPostorder traversal \n");
-    // postorderTraversal(root);
+/* Looping code*/
+int final_value = 0; 
+int layer_num = 0;
+while (root->right->value != -1){ //add the LEFT NODE STATEMENT TOO
+    if (root->value == 0) {
+        printf("%d", root->value);
+        root = root->left; 
+        }
+    else {
+        final_value += pow(2, layer_num);
+        printf("%d",root->value);
+        root = root->right;
+    }
+    layer_num += 1;
 }
+printf("%d", final_value);
+}
+
+
+
+
+//printf("%d", wrist_down->right->value);
+//root->value = root->left->value;
+//printf("%d", root->value);
+
+// Inorder traversal
+// void inorderTraversal(struct node* root) {
+//     if (root == NULL) return;
+//     inorderTraversal(root->left);
+//     printf("%d ->", root->value);
+//     inorderTraversal(root->right);
+// }
+
+// Preorder traversal
+/*void preorderTraversal(struct node* root) {
+    if (root == NULL) return;
+    printf("%d ->", root->value);
+    preorderTraversal(root->left);
+    preorderTraversal(root->right);
+}*/
+
+// Postorder traversal
+// void postorderTraversal(struct node* root) {
+//     if (root == NULL) return;
+//     postorderTraversal(root->left);
+//     postorderTraversal(root->right);
+//     printf("%d ->", root->value);
+// }
