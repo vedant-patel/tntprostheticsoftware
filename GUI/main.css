@@ -1,20 +1,20 @@
 h1 {
     text-align: center;
+    margin-top: 21%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: larger;
     color: #ffffff;
 }
 
 body {
-    background: url(c0028593-400px-wm.jpg);
+    background: url(background-tntnp1.jpg);
     background-size: 100%;
-    width: 100%;
     text-align: center;
-    color: #595959;
+    color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: smaller;
     background-attachment: fixed;
-    background-position: 5px 50px;
+    background-position: 0px 0px;
     background-repeat: no-repeat, repeat;
     background-color: #595959;
 }
