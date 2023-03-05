@@ -19,12 +19,13 @@ def moveFinger(pin, angle):
 port = 'COM3'
 board = Arduino(port)
 
-servo0 = 9  # Thumb
-servo1 = 10  # Index
-servo2 = 6  # Middle
-servo3 = 11  # Ring
+servo0 = 5  # Index
+servo1 = 10  # Middle
+servo2 = 6  # Ring
+servo3 = 11  # Pinky
 # servo4 = 6 #Pinkie
 # servo5 = 7 #Wrist
+
 
 board.digital[servo0].mode = SERVO
 board.digital[servo1].mode = SERVO
@@ -36,17 +37,38 @@ board.digital[servo3].mode = SERVO
 # board.digital[servo5].mode = SERVO
 
 
-def index(request):
+
+
+
+
+def home(request):
     return render(request, "index.html")
 
 
 def testarm(request):
-    servo_num = 0
-    print(servo_num)
+    return render(request, "testarm.html")
+
+def index(request):
+    moveFinger(servo0, 90)
+    #moveFinger(servo_num,90)
+    print(servo0)
     return render(request, "testarm.html")
 
 
-def testarm1(request):
-    servo_num = 1
-    print(servo_num)
+def middle(request):
+    moveFinger(servo1, 90)
+   # moveFinger(servo_num,90)
+    print(servo1)
+    return render(request, "testarm.html")
+
+def ring(request):
+    moveFinger(servo2, 90)
+   # moveFinger(servo_num,90)
+    print(servo2)
+    return render(request, "testarm.html")
+
+def pinky(request):
+    moveFinger(servo3, 90)
+    #moveFinger(servo_num,90)
+    print(servo3)
     return render(request, "testarm.html")

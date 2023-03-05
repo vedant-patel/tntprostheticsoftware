@@ -1,16 +1,36 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WELCOME TO TNT NEURAL PROSTHETICS 2023</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}" type="text/css">
+
 </head>
+<h1>
+    <div>
+        <h1>Triton Neurotech - Prosthetic Arm</h1>
+        <button onclick="window.location.href='testarm'">
+            Test Arm 
+        </button>
+        <button>Test Machine Learning Model</button>
+        <button onclick="window.location.href='https://sites.google.com/ucsd.edu/tnt-project-dashboard/intro-projects/prosthetics?authuser=0';">
+            Project Overview
+        </button>        
+        <button>Project Members</button>
+    </div>
+</h1>
+
 <body>
-<h1>WELCOME TO TNT NEURAL PROSTHETICS 2023</h1>
-<ul>
-    <li><a href="{% url 'testarm' %}">Test Arm</a></li>
-    <li>Test Model</li>
-    <li>Project Info</li>
-    <li>Project Members</li>
-</ul>
+    <div>
+        
+        <img src = "{% static 'Project Poster - Neural Prosthetics (3)-1.png' %}" width = 100%>
+    </body>
+        
+    </div>
 </body>
+
 </html>

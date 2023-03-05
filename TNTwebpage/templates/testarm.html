@@ -2,22 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TEST ARM</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}" type="text/css">
 </head>
+<h1>
+    <div>
+        <h1>Triton Neurotech - Prosthetic Arm</h1>
+        <button onclick="window.location.href='home'">
+            Back
+        </button>
+        <button>Test Machine Learning Model</button>
+        <button onclick="window.location.href='https://sites.google.com/ucsd.edu/tnt-project-dashboard/intro-projects/prosthetics?authuser=0';">
+            Project Overview
+          </button>        
+        <button>Project Members</button>
+    </div>
+</h1>
+
 <body>
-<h1>TESTARM</h1>
-    <ul>
-        <form action="/testarm">
-    <button id="stat_btn" class="btn"><li>INDEX</li></button>
-        </form>
+    <div>
+        
+        <body>
+            Click a finger to test it
 
-    <li>MIDDLE</li>
-    <li>RING</li>
-    <li>PINKY</li>
-</ul>
+            <br>
+            <form action="/pinky">
+                <button id="pinky" class="btn">Pinky Finger</button>
+            </form>
+            <form action="/ring">
+                <button id="ring" class="btn">Ring Finger</button>
+            </form>
+            <form action="/middle">
+                <button id="middle" class="btn">Middle Finger</button>
+            </form>
+            <form action="/index">
+                <button id="index" class="btn">Index Finger</button>
+            </form>
 
-<form action="/testarm1">
-    <button id="stat_btn1" class="btn">DO IT</button>
-</form>
+        </body>
+    </body>
+        
+    </div>
 </body>
+
 </html>
