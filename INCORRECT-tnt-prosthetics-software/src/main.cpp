@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Servo.h>
 
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
