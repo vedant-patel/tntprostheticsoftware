@@ -20,9 +20,9 @@ port = 'COM3'
 board = Arduino(port)
 
 servo0 = 5  # Index
-servo1 = 10  # Middle
-servo2 = 6  # Ring
-servo3 = 11  # Pinky
+servo1 = 6  # Middle
+servo2 = 10  # Ring
+servo3 = 9  # Pinky
 # servo4 = 6 #Pinkie
 # servo5 = 7 #Wrist
 
@@ -49,26 +49,26 @@ def testarm(request):
     return render(request, "testarm.html")
 
 def index(request):
-    moveFinger(servo0, 90)
+    moveFinger(servo0, 180)
     #moveFinger(servo_num,90)
     print(servo0)
     return render(request, "testarm.html")
 
 
 def middle(request):
-    moveFinger(servo1, 90)
+    moveFinger(servo1, 180)
    # moveFinger(servo_num,90)
     print(servo1)
     return render(request, "testarm.html")
 
 def ring(request):
-    moveFinger(servo2, 90)
+    moveFinger(servo2, 180)
    # moveFinger(servo_num,90)
     print(servo2)
     return render(request, "testarm.html")
 
 def pinky(request):
-    moveFinger(servo3, 90)
+    moveFinger(servo3, 180)
     #moveFinger(servo_num,90)
     print(servo3)
     return render(request, "testarm.html")
